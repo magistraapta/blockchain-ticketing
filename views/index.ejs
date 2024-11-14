@@ -4,26 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <h2>Ticket-Master</h2>
+    <div class="grid row p-4 bg-primary text-light">
+        <div class="col">
+            <h2>Ticket Master</h2>
         </div>
-        <div class="grid row">
+    </div>
+    <div class="container">
+        
+        <div class="grid row m-4 gy-3">
             <% events.forEach(event => { %>
                 <div class="col-md-4"> 
                     <div class="card h-100"> 
-                        <img src="<%= event.image %>" class="card-img-top" alt="<%= event.title %>" style="width: 300px; height: 200px;">
+                        <div class="d-flex justify-content-center">
+                            <img src="<%= event.image %>" class="card-img-top" alt="<%= event.title %>" style="width: 320px; height: 200px;">
+                        </div>
+                        
                         <div class="card-body">
                             <h3 class="card-title"><%= event.title %></h3>
                             <p class="card-text"><%= event.description %></p>
                         </div>
-                        <button class="btn btn-primary">
-                            <a href="/event/<%= event.id %>">Detail</a>
-                        </button>
+                        <a href="/event/<%= event.id %>" class="text-light btn btn-primary">Detail</a>
                     </div>
                 </div>
             <% }) %>
@@ -34,6 +38,6 @@
 
 
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
